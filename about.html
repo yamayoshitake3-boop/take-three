@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会社概要｜合同会社TAKE THREE</title>
+<meta name="description" content="合同会社TAKE THREEの会社概要・代表メッセージ・事業内容をご紹介します。">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-header {
+  padding: 160px 32px 80px;
+  position: relative;
+  border-bottom: 1px solid var(--color-line);
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: "ABOUT";
+  position: absolute;
+  right: -20px;
+  bottom: -30px;
+  font-family: var(--font-en);
+  font-size: clamp(80px, 14vw, 200px);
+  font-weight: 900;
+  color: var(--color-bg-alt);
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  pointer-events: none;
+}
+
+.page-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.3;
+  margin-top: 16px;
+}
+
+.page-header h1 em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+/* ===== ミッション ===== */
+.mission {
+  padding: 100px 32px;
+}
+
+.mission-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mission-quote {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.5vw, 44px);
+  line-height: 1.7;
+  font-weight: 700;
+  margin: 32px 0;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding: 32px 0;
+}
+
+.mission-quote::before,
+.mission-quote::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.mission-quote::before { top: 0; }
+.mission-quote::after { bottom: 0; }
+
+.mission-quote em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.mission-text {
+  color: var(--color-ink-soft);
+  font-size: 16px;
+  line-height: 2;
+  text-align: left;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.mission-text p {
+  margin-bottom: 20px;
+}
+
+/* ===== 代表メッセージ ===== */
+.message {
+  background: var(--color-bg-alt);
+  padding: 100px 32px;
+}
+
+.message-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.message-side {
+  text-align: center;
+}
+
+.message-avatar {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 24px;
+  background: var(--color-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--color-accent);
+  border: 1px solid var(--color-line);
+}
+
+.message-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.message-role {
+  font-family: var(--font-en);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+}
+
+.message-content .section-title {
+  margin-bottom: 32px;
+}
+
+.message-content p {
+  color: var(--color-ink-soft);
+  font-size: 15px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+/* ===== 会社情報テーブル ===== */
+.company-info {
+  padding: 100px 32px;
+}
+
+.company-info-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+}
+
+.info-table th,
+.info-table td {
+  padding: 24px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-line);
+  font-size: 15px;
+  vertical-align: top;
+}
+
+.info-table th {
+  width: 200px;
+  font-family: var(--font-en);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  font-weight: 600;
+}
+
+.info-table td {
+  color: var(--color-ink-soft);
+  line-height: 1.9;
+}
+
+.info-table tr:first-child th,
+.info-table tr:first-child td {
+  border-top: 2px solid var(--color-ink);
+}
+
+/* ===== 事業エリア ===== */
+.area {
+  background: var(--color-ink);
+  color: var(--color-bg);
+  padding: 100px 32px;
+}
+
+.area-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.area-inner .section-label {
+  color: var(--color-gold);
+}
+
+.area-inner .section-label::before {
+  background: var(--color-gold);
+}
+
+.area-inner .section-title {
+  color: var(--color-bg);
+}
+
+.area-inner .section-title em {
+  color: var(--color-gold);
+}
+
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.area-card {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 32px 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.area-card:hover {
+  background: rgba(184, 153, 104, 0.1);
+  border-color: var(--color-gold);
+}
+
+.area-card-en {
+  font-family: var(--font-en);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  margin-bottom: 8px;
+}
+
+.area-card-jp {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .message-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  .message-content {
+    text-align: left;
+  }
+  .info-table th {
+    width: 120px;
+    font-size: 11px;
+  }
+  .info-table th, .info-table td {
+    padding: 16px 8px;
+  }
+  .area-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"></span>
+      <span>TAKE THREE</span>
+    </a>
+    <button class="menu-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<section class="page-header">
+  <div class="page-header-inner">
+    <div class="section-label">About Us</div>
+    <h1>鈑金塗装業界に、<br><em>本質的な変化</em>を。</h1>
+  </div>
+</section>
+
+<!-- Mission -->
+<section class="mission">
+  <div class="mission-inner">
+    <div class="section-label" style="justify-content:center;">
+      Our Mission
+    </div>
+    <div class="mission-quote">
+      安心して利益を上げられる、<br><em>鈑金塗装店</em>をつくる。
+    </div>
+    <div class="mission-text">
+      <p>「忙しいのに、なぜか利益が残らない」「適正な価格設定が分からない」――。鈑金塗装業界の経営者から、私たちは何度もこの声を聞いてきました。</p>
+      <p>原因は、現場の頑張りが足りないからでも、職人の技術が低いからでもありません。業界の構造的な課題と、見積・業務の仕組みに、利益を生みにくくしている見えない要因があるからです。</p>
+      <p>合同会社TAKE THREEは、データと現場、両方の視点からこの課題に向き合います。適正レバレートの設計、見積の計上漏れ発見、業務システムの導入支援――。一つひとつの改善を積み重ね、御社が「安心して利益を上げられる」状態をつくることが、私たちの使命です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 代表メッセージ -->
+<section class="message">
+  <div class="message-inner">
+    <div class="message-side">
+      <div class="message-avatar">山</div>
+      <div class="message-name">山本</div>
+      <div class="message-role">Representative</div>
+    </div>
+    <div class="message-content">
+      <div class="section-label">Message</div>
+      <h2 class="section-title">現場で起きていることを、<br><em>数字</em>で語る。</h2>
+      <p>鈑金塗装業界に関わる中で、多くの工場が「努力の方向性」を見失っていると感じてきました。一生懸命働いているのに、なぜ利益が残らないのか――その答えは、感覚や経験ではなく、データの中にあります。</p>
+      <p>私たちは「業界の慣習だから」で済ませず、国土交通省ガイドラインや自研センター指数といった客観的な基準に基づいて、御社の現状を分析します。そして、適正な値決め、計上漏れの発見、業務フローの再構築を通じて、利益が出る仕組みそのものを御社と一緒に作り上げます。</p>
+      <p>大手コンサルのように上から指示するのでもなく、システム会社のように売って終わるのでもなく。一社一社の現場に寄り添い、伴走するパートナーでありたい。それが、TAKE THREEの存在意義です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 会社情報 -->
+<section class="company-info">
+  <div class="company-info-inner">
+    <div class="section-label">Company Profile</div>
+    <h2 class="section-title">会社<em>情報</em></h2>
+    <table class="info-table">
+      <tr>
+        <th>商号</th>
+        <td>合同会社 TAKE THREE</td>
+      </tr>
+      <tr>
+        <th>代表者</th>
+        <td>山本</td>
+      </tr>
+      <tr>
+        <th>事業内容</th>
+        <td>
+          ・鈑金塗装業界向け見積分析コンサルティング<br>
+          ・業務システム（WINCAR）導入支援<br>
+          ・経営者向けセミナー・研修事業
+        </td>
+      </tr>
+      <tr>
+        <th>対応エリア</th>
+        <td>愛知県・岐阜県・三重県・静岡県（東海地方全域）</td>
+      </tr>
+      <tr>
+        <th>連携体制</th>
+        <td>税務については税理士資格を持つパートナーと連携し対応</td>
+      </tr>
+      <tr>
+        <th>準拠基準</th>
+        <td>
+          ・国土交通省「自動車整備事業者の適正レバレート設定ガイドライン」（2025年3月）<br>
+          ・自研センター指数テーブルマニュアル
+        </td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- 事業エリア -->
+<section class="area">
+  <div class="area-inner">
+    <div class="section-label">Service Area</div>
+    <h2 class="section-title">東海地方<em>全域</em>で対応。</h2>
+    <p style="max-width:600px;color:var(--color-line);line-height:2;">愛知・岐阜・三重・静岡を中心に、東海地方の鈑金塗装店を直接お伺いしてサポートしています。オンラインでの相談・分析にも対応可能です。</p>
+
+    <div class="area-grid">
+      <div class="area-card">
+        <div class="area-card-en">AICHI</div>
+        <div class="area-card-jp">愛知</div>
+      </div>
+      <div class="area-card">
+        <div class="area-card-en">NAGOYA</div>
+        <div class="area-card-jp">名古屋</div>
+      </div>
+      <div class="area-card">
+        <div class="area-card-en">GIFU</div>
+        <div class="area-card-jp">岐阜</div>
+      </div>
+      <div class="area-card">
+        <div class="area-card-en">MIE</div>
+        <div class="area-card-jp">三重</div>
+      </div>
+      <div class="area-card">
+        <div class="area-card-en">SHIZUOKA</div>
+        <div class="area-card-jp">静岡</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--color-bg-alt);padding:100px 32px;text-align:center;">
+  <div style="max-width:680px;margin:0 auto;">
+    <h2 style="font-family:var(--font-display);font-size:clamp(28px,4vw,40px);margin-bottom:24px;font-weight:700;line-height:1.5;">まずは話してみませんか。</h2>
+    <p style="color:var(--color-ink-soft);margin-bottom:36px;line-height:1.9;">現状をお聞きするだけでも歓迎です。<br>無理な営業や勧誘は一切いたしません。</p>
+    <a href="contact.html" class="btn btn-primary">お問い合わせ</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>合同会社 TAKE THREE</h3>
+      <p>東海地方の鈑金塗装店向けに、見積分析コンサルティングと業務システム導入支援を提供しています。</p>
+    </div>
+    <div class="footer-col">
+      <h4>Sitemap</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Service Area</h4>
+      <ul>
+        <li>愛知県</li>
+        <li>岐阜県</li>
+        <li>三重県</li>
+        <li>静岡県</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TAKE THREE LLC. All rights reserved.</span>
+    <span>Tokai, Japan</span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
+
+</body>
+</html>

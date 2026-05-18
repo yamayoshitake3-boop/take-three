@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合同会社TAKE THREE｜鈑金塗装店の利益を、安心して伸ばす</title>
+<meta name="description" content="東海地方の鈑金塗装店向け。WINCAR導入支援と見積分析コンサルティングで、安心して利益を上げられる経営を実現します。">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== Hero ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 32px 80px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.hero-bg-text {
+  position: absolute;
+  right: -50px;
+  bottom: -40px;
+  font-family: var(--font-en);
+  font-size: clamp(140px, 22vw, 320px);
+  font-weight: 900;
+  color: var(--color-bg-alt);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-en);
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  width: 48px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 6.5vw, 76px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s forwards;
+}
+
+.hero h1 .highlight {
+  position: relative;
+  display: inline-block;
+  color: var(--color-accent);
+}
+
+.hero h1 .highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-accent);
+  opacity: 0.2;
+}
+
+.hero-lead {
+  font-size: 17px;
+  line-height: 2;
+  max-width: 560px;
+  margin-bottom: 48px;
+  color: var(--color-ink-soft);
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s forwards;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.8s forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== 2つのソリューション ===== */
+.solutions {
+  background: var(--color-bg-alt);
+  padding: var(--space-section) 32px;
+  position: relative;
+}
+
+.solutions-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.solutions-intro {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.solutions-intro .section-label {
+  justify-content: center;
+}
+
+.solutions-intro .section-label::before,
+.solutions-intro .section-label::after {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.solutions-intro p {
+  max-width: 640px;
+  margin: 24px auto 0;
+  color: var(--color-ink-soft);
+  font-size: 16px;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.solution-card {
+  background: var(--color-bg);
+  padding: 56px 48px;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid var(--color-line);
+}
+
+.solution-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(26, 26, 26, 0.08);
+}
+
+.solution-number {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  font-family: var(--font-en);
+  font-size: 80px;
+  font-weight: 900;
+  color: var(--color-bg-alt);
+  line-height: 1;
+}
+
+.solution-tag {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  padding: 6px 14px;
+  background: var(--color-ink);
+  color: var(--color-bg);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.solution-card h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.solution-card .sub {
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+
+.solution-card p {
+  color: var(--color-ink-soft);
+  font-size: 15px;
+  margin-bottom: 32px;
+  line-height: 1.9;
+}
+
+.solution-features {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.solution-features li {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--color-line);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.solution-features li::before {
+  content: "◆";
+  color: var(--color-accent);
+  font-size: 10px;
+}
+
+.solution-link {
+  font-family: var(--font-en);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-ink);
+  padding-bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s ease;
+}
+
+.solution-link:hover {
+  gap: 14px;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* ===== Why TAKE THREE ===== */
+.why {
+  padding: var(--space-section) 32px;
+}
+
+.why-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.why-text .section-title {
+  margin-bottom: 24px;
+}
+
+.why-text > p {
+  color: var(--color-ink-soft);
+  font-size: 16px;
+  line-height: 2;
+}
+
+.why-points {
+  display: grid;
+  gap: 32px;
+}
+
+.why-point {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 24px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.why-point:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.why-point-num {
+  font-family: var(--font-en);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.why-point h4 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.why-point p {
+  color: var(--color-ink-soft);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* ===== CTA ===== */
+.cta-section {
+  background: var(--color-ink);
+  color: var(--color-bg);
+  padding: 100px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: "CONTACT";
+  position: absolute;
+  font-family: var(--font-en);
+  font-size: clamp(120px, 18vw, 240px);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.04);
+  letter-spacing: -0.04em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.cta-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.cta-section p {
+  color: var(--color-line);
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.cta-section .btn-primary {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+.cta-section .btn-primary:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+@media (max-width: 768px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .solution-card {
+    padding: 40px 28px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"></span>
+      <span>TAKE THREE</span>
+    </a>
+    <button class="menu-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg-text">03</div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">For Auto Body Shops in Tokai Area</p>
+    <h1>
+      鈑金塗装店の利益を、<br>
+      <span class="highlight">安心して</span>伸ばす。
+    </h1>
+    <p class="hero-lead">
+      計上漏れを見つける見積分析と、現場が変わるWINCAR導入支援。<br>
+      東海地方の鈑金塗装店に、適正レバレートで利益が出る経営を届けます。
+    </p>
+    <div class="hero-cta">
+      <a href="services.html" class="btn btn-primary">サービスを見る</a>
+      <a href="contact.html" class="btn btn-outline">無料相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- Two Solutions -->
+<section class="solutions">
+  <div class="solutions-inner">
+    <div class="solutions-intro">
+      <div class="section-label">Two Solutions, One Entrance</div>
+      <h2 class="section-title">同じ入口から、<em>2つの解決策</em>。</h2>
+      <p>「利益が出ない」という同じ課題に、現場と数字、両側からアプローチします。<br>
+      あなたの工場の状況に合わせて、最適なソリューションをご提案します。</p>
+    </div>
+
+    <div class="solutions-grid">
+
+      <article class="solution-card">
+        <div class="solution-number">01</div>
+        <span class="solution-tag">WINCAR</span>
+        <h3>業務システム導入支援</h3>
+        <p class="sub">— 現場の業務を、利益が出る仕組みに</p>
+        <p>受付から見積・作業指示・請求まで一気通貫。WINCARを軸に、工場の日々の業務フローそのものを利益が出る形に組み替えます。</p>
+        <ul class="solution-features">
+          <li>WINCARの導入・運用サポート</li>
+          <li>業務フロー整備と社内教育</li>
+          <li>適正レバレートでの料金設計</li>
+          <li>四半期セミナーで継続学習</li>
+        </ul>
+        <a href="services.html#wincar" class="solution-link">詳しく見る</a>
+      </article>
+
+      <article class="solution-card">
+        <div class="solution-number">02</div>
+        <span class="solution-tag">Estimate</span>
+        <h3>見積分析コンサルティング</h3>
+        <p class="sub">— 計上漏れを、データで発見する</p>
+        <p>自研センター指数準拠の独自分析システムで、見積書から見えなくなっている計上漏れを発見。一件あたりの粗利を着実に引き上げます。</p>
+        <ul class="solution-features">
+          <li>独自AIシステムによる見積分析</li>
+          <li>付帯・付加作業の計上漏れ検出</li>
+          <li>地域ベンチマークとの比較レポート</li>
+          <li>具体的な改善提案つき</li>
+        </ul>
+        <a href="services.html#estimate" class="solution-link">詳しく見る</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="why">
+  <div class="why-inner">
+    <div class="why-text">
+      <div class="section-label">Why TAKE THREE</div>
+      <h2 class="section-title">選ばれる<em>3つの理由</em>。</h2>
+      <p>大手コンサルでも、ソフト会社でもない。鈑金塗装業界に深く入り込み、現場の言葉で、データで、結果で応えるパートナーです。</p>
+    </div>
+
+    <div class="why-points">
+      <div class="why-point">
+        <div class="why-point-num">01</div>
+        <div>
+          <h4>業界特化の知見</h4>
+          <p>鈑金塗装業界に特化したコンサルティング。自研センター指数や国土交通省レバレートガイドラインに準拠した、業界の実情に即した提案を行います。</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-point-num">02</div>
+        <div>
+          <h4>独自の分析システム</h4>
+          <p>454キーワードを実装した独自の見積分析システムで、人の目では見落としがちな計上漏れを自動検出。データで具体的に改善点を示します。</p>
+        </div>
+      </div>
+      <div class="why-point">
+        <div class="why-point-num">03</div>
+        <div>
+          <h4>東海地方密着</h4>
+          <p>愛知・名古屋・岐阜・三重・静岡を拠点に、地域の鈑金塗装店をサポート。地域ベンチマークデータも蓄積し、現実的な目標設定を支援します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>まずは無料相談から。<br>あなたの工場の現状を、お聞かせください。</h2>
+    <p>「自社にはどちらが合うか」「いくらかかるか」など、お気軽にお問い合わせください。<br>無理な営業は一切いたしません。</p>
+    <a href="contact.html" class="btn btn-primary">無料相談を申し込む</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>合同会社 TAKE THREE</h3>
+      <p>東海地方の鈑金塗装店向けに、見積分析コンサルティングと業務システム導入支援を提供しています。</p>
+    </div>
+    <div class="footer-col">
+      <h4>Sitemap</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Service Area</h4>
+      <ul>
+        <li>愛知県</li>
+        <li>岐阜県</li>
+        <li>三重県</li>
+        <li>静岡県</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TAKE THREE LLC. All rights reserved.</span>
+    <span>Tokai, Japan</span>
+  </div>
+</footer>
+
+<script>
+  // モバイルメニュー
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+/* ===========================
+   合同会社TAKE THREE 公式サイト
+   共通スタイルシート
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@500;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-bg: #f5f2ec;
+  --color-bg-alt: #ebe6dd;
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #3a3a3a;
+  --color-ink-muted: #6b6b6b;
+  --color-accent: #c8401f;
+  --color-accent-deep: #8a2a14;
+  --color-gold: #b89968;
+  --color-line: #c9c2b5;
+  --color-white: #ffffff;
+
+  --font-display: 'Shippori Mincho', 'Noto Serif JP', serif;
+  --font-body: 'Noto Serif JP', serif;
+  --font-en: 'Inter', sans-serif;
+
+  --max-width: 1200px;
+  --space-section: clamp(60px, 10vw, 140px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  line-height: 1.8;
+  font-weight: 400;
+  font-feature-settings: "palt";
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== ヘッダー ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(245, 242, 236, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-mark {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background: var(--color-ink);
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.logo-mark::after {
+  content: "3";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  color: var(--color-bg);
+  font-family: var(--font-en);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  font-family: var(--font-en);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 6px 0;
+  text-transform: uppercase;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--color-accent);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-ink);
+  transition: all 0.3s ease;
+}
+
+/* ===== 共通セクション ===== */
+main {
+  padding-top: 80px;
+}
+
+.section {
+  padding: var(--space-section) 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--font-en);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 48px;
+  letter-spacing: 0.02em;
+}
+
+.section-title em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+/* ===== ボタン ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(200, 64, 31, 0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+}
+
+.btn-outline:hover {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+.btn::after {
+  content: "→";
+  font-family: var(--font-en);
+  transition: transform 0.3s ease;
+}
+
+.btn:hover::after {
+  transform: translateX(4px);
+}
+
+/* ===== フッター ===== */
+footer {
+  background: var(--color-ink);
+  color: var(--color-bg);
+  padding: 80px 32px 32px;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+
+.footer-brand h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--color-line);
+}
+
+.footer-col h4 {
+  font-family: var(--font-en);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--color-gold);
+}
+
+.footer-col ul {
+  list-style: none;
+  font-size: 14px;
+}
+
+.footer-col li {
+  margin-bottom: 10px;
+}
+
+.footer-col a:hover {
+  color: var(--color-gold);
+}
+
+.footer-bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-en);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-muted);
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    flex-direction: column;
+    padding: 24px 32px;
+    gap: 20px;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .section {
+    padding: 80px 24px;
+  }
+}
