@@ -442,6 +442,99 @@
 
 </main>
 
+<!-- モーダル：個人情報保護方針 -->
+<div id="privacy-modal">
+  <div class="privacy-modal-content">
+    <button class="privacy-close-btn" onclick="closePrivacyModal()">×</button>
+    <h2>個人情報保護方針</h2>
+    <p>合同会社TAKE THREE（以下「当社」といいます）は、お客様および取引先関係者の個人情報の重要性を認識し、適切に保護するため、以下のとおり個人情報保護方針を定めます。</p>
+
+    <h3>【1．取得する個人情報】</h3>
+    <p>当社は、以下の個人情報を取得することがあります。</p>
+    <ul>
+      <li>氏名</li>
+      <li>生年月日</li>
+      <li>住所</li>
+      <li>電話番号、メールアドレス</li>
+      <li>勤務先情報</li>
+      <li>車両情報</li>
+      <li>リース契約に必要な情報</li>
+      <li>本人確認書類情報</li>
+      <li>他社システムから移行された顧客・取引先情報</li>
+    </ul>
+
+    <h3>【2．利用目的】</h3>
+    <ul>
+      <li>サービス提供（販売・修理・見積・部品手配）</li>
+      <li>リース契約の審査・締結・管理</li>
+      <li>提携会社への審査依頼</li>
+      <li>部品メーカー等への発注</li>
+      <li>本人確認および不正防止</li>
+      <li>システム移行・データ統合・業務効率化</li>
+      <li>お問い合わせ対応</li>
+    </ul>
+
+    <h3>【3．第三者提供】</h3>
+    <p>当社は以下の場合に個人情報を提供することがあります。</p>
+    <ul>
+      <li>（1）リース会社・金融機関への提供</li>
+      <li>（2）メーカー・仕入先・修理業者への提供</li>
+      <li>（3）システム提供会社・ITベンダーへの提供</li>
+      <li>（4）法令に基づく場合</li>
+    </ul>
+    <p>※必要最小限に限定します。</p>
+
+    <h3>【4．データ移行に関する取扱い】</h3>
+    <p>他社システムから移行された個人情報については、</p>
+    <ul>
+      <li>適法に取得された情報であることを前提とし</li>
+      <li>利用目的の範囲内でのみ使用し</li>
+      <li>安全管理を徹底します</li>
+    </ul>
+
+    <h3>【5．安全管理措置】</h3>
+    <ul>
+      <li>アクセス制限</li>
+      <li>パスワード管理</li>
+      <li>書類の施錠保管</li>
+      <li>不要データの削除</li>
+      <li>従業員教育</li>
+    </ul>
+
+    <h3>【6．保有期間】</h3>
+    <p>必要期間のみ保有し、不要時は削除</p>
+
+    <h3>【7．開示等の請求】</h3>
+    <p>適切に対応</p>
+
+    <h3>【8．法令遵守】</h3>
+    <p>関連法令を遵守</p>
+
+    <h3>【9．お問い合わせ】</h3>
+    <p>合同会社TAKE THREE<br>電話　090-2016-7284<br>Mail yamayoshi.take3@gmail.com</p>
+  </div>
+</div>
+
+<script>
+function openPrivacyModal() {
+  document.getElementById('privacy-modal').classList.add('open');
+}
+
+function closePrivacyModal() {
+  document.getElementById('privacy-modal').classList.remove('open');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('privacy-modal');
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closePrivacyModal();
+      }
+    });
+  }
+});
+</script>
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -468,7 +561,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 TAKE THREE LLC. All rights reserved.</span>
-    <span>Tokai, Japan</span>
+    <div><a href="javascript:void(0);" onclick="openPrivacyModal()" style="color:inherit;text-decoration:underline;cursor:pointer;">個人情報保護方針</a></div>
   </div>
 </footer>
 
